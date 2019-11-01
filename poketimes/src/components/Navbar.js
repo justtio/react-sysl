@@ -1,4 +1,6 @@
 import React from "react";
+import { Link, NavLink } from "react-router-dom";
+
 const Navbar = () => {
   return (
     <nav className="nav wrapper red darken-3">
@@ -6,13 +8,13 @@ const Navbar = () => {
         <a className="brand-logo">Poke' Times</a>
         <ul className="right">
           <li>
-            <a href="/">Home</a>
+            <Link to="/">Home</Link>
           </li>
           <li>
-            <a href="/About">About</a>
+            <Link to="/About">About</Link>
           </li>
           <li>
-            <a href="/Contact">Contact</a>
+            <Link to="/Contact">Contact</Link>
           </li>
         </ul>
       </div>

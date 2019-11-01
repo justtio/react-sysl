@@ -1,7 +1,13 @@
 import React from "react";
-const About = () => {
+import Rainbow from "../hoc/Rainbow";
+
+const About = props => {
+  setTimeout(() => {
+    // console.log(props);
+    props.history.push("./Contact");
+  }, 2000);
   return (
-    <div className="contianer">
+    <div className="container">
       <h4 className="center">About</h4>
       <p>
         This version contains the source SCSS files. By choosing this version
@@ -12,4 +18,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Rainbow(About);
