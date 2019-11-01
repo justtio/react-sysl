@@ -1,21 +1,23 @@
 import React, { Component } from "react";
-import axios from "axios";
+// import axios from "axios";
 import { Link } from "react-router-dom";
 import pokeball from "../pokeball.jpeg";
+import { connect } from "react-redux";
 
 class Home extends Component {
-  state = {
-    posts: []
-  };
-  componentDidMount() {
-    axios.get("http://jsonplaceholder.typicode.com/posts").then(res => {
-      this.setState({
-        posts: res.data.slice(0, 10)
-      });
-    });
-  }
+  // state = {
+  //   posts: []
+  // };
+  // componentDidMount() {
+  //   axios.get("http://jsonplaceholder.typicode.com/posts").then(res => {
+  //     this.setState({
+  //       posts: res.data.slice(0, 10)
+  //     });
+  //   });
+  // }
   render() {
-    const { posts } = this.state;
+    console.log(this.props);
+    const { posts } = this.props;
     const postList = posts.length ? (
       posts.map(post => {
         return (
@@ -42,5 +44,10 @@ class Home extends Component {
     );
   }
 }
+const mapStateToProps = state => {
+  return {
+    posts: state.posts
+  };
+};
 
-export default Home;
+export default connect(mapStateToProps)(Home);
