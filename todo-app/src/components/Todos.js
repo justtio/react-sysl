@@ -1,5 +1,5 @@
 import React from "react";
-const Todos = () => {
+const Todos = ({ todos }) => {
   return <div className="todos collection"></div>;
 };
 
